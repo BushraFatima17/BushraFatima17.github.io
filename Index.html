@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bushra Fatima — AI/ML Engineer</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8C%B1</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F1E6; --card:#FFFFFF; --ink:#262F2A; --ink-soft:#65705F;
+  --accent:#2F6F62; --accent-wash:#E5EFE9; --gold:#B87E33;
+  --line:#E1DAC7; --shadow:0 2px 12px rgba(40,35,20,.07); --maxw:740px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg); color:var(--ink); font-family:'Work Sans',sans-serif; font-size:16px; line-height:1.65;}
+h1,h2,h3{font-family:'Fraunces',serif; color:var(--ink); font-weight:600;}
+a{color:var(--accent);}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+section{padding:44px 0; border-bottom:1px solid var(--line);}
+section:last-of-type{border-bottom:none;}
+h2{font-size:1.5rem; margin-bottom:22px;}
+p{color:var(--ink-soft);}
+
+nav{position:sticky; top:0; z-index:20; background:rgba(245,241,230,.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+.navrow{max-width:var(--maxw); margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between;}
+.brand{font-family:'Fraunces',serif; font-weight:600; color:var(--accent);}
+.navlinks{display:flex; gap:20px; font-size:.9rem;}
+.navlinks a{color:var(--ink-soft);}
+.navlinks a:hover{color:var(--accent);}
+#navToggle{display:none; border:none; background:none; font-size:1.3rem; cursor:pointer; color:var(--ink);}
+@media(max-width:600px){
+  .navlinks{position:fixed; inset:53px 0 auto 0; background:var(--bg); flex-direction:column; padding:16px 24px;
+    border-bottom:1px solid var(--line); transform:translateY(-130%); transition:transform .25s;}
+  .navlinks.open{transform:translateY(0);}
+  #navToggle{display:block;}
+}
+
+.hero{padding:54px 0 20px; border-bottom:none;}
+.herogrid{display:grid; grid-template-columns:160px 1fr; gap:32px; align-items:center;}
+@media(max-width:600px){.herogrid{grid-template-columns:1fr;}}
+.avatarwrap{width:150px; height:150px; border-radius:22px; overflow:hidden; border:4px solid var(--accent);
+  box-shadow:var(--shadow); background:var(--accent-wash); display:flex; align-items:center; justify-content:center;
+  transform:rotate(-3deg);}
+.avatarwrap img{width:100%; height:100%; object-fit:cover; display:block;}
+.avatar-fallback{display:none; font-family:'Fraunces',serif; font-weight:600; font-size:2.2rem; color:var(--accent);}
+.hero h1{font-size:clamp(1.8rem,4.4vw,2.5rem); margin-bottom:12px;}
+.hero p{max-width:56ch; margin-bottom:8px;}
+.contactrow{margin-top:12px; font-size:.93rem;}
+.contactrow a{margin-right:2px; border-bottom:1px solid var(--line); padding-bottom:1px;}
+.contactrow span{color:var(--ink-soft); margin:0 6px;}
+
+/* news — thin timeline, no nested cards */
+.tl{position:relative; padding-left:20px; border-left:2px solid var(--line);}
+.tlitem{position:relative; padding-bottom:22px;}
+.tlitem:last-child{padding-bottom:0;}
+.tlitem::before{content:"";position:absolute; left:-25px; top:5px; width:8px; height:8px; border-radius:50%; background:var(--accent);}
+.tlitem .when{font-weight:600; color:var(--gold); font-size:.85rem;}
+.tlitem p{margin-top:2px; font-size:.95rem;}
+
+/* experience */
+.exitem{margin-bottom:26px;}
+.exitem:last-child{margin-bottom:0;}
+.exitem .rolerow{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; margin-bottom:3px;}
+.exitem .role{font-weight:600; font-size:1.03rem;}
+.exitem .datepill{font-size:.76rem; color:var(--accent); border:1px solid var(--accent); border-radius:6px; padding:2px 8px;}
+.exitem .org{color:var(--ink-soft); font-size:.9rem; margin-bottom:8px;}
+.exitem ul{padding-left:19px; color:var(--ink-soft); font-size:.94rem;}
+.exitem li{margin-bottom:5px;}
+
+/* projects — flat outline grid */
+.pgrid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+@media(max-width:560px){.pgrid{grid-template-columns:1fr;}}
+.pcard{border:1px solid var(--line); border-radius:14px; padding:18px; background:var(--card);}
+.thumb{width:40px; height:40px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:1.25rem; margin-bottom:10px;}
+.pcard h3{font-size:1rem; margin-bottom:6px; font-weight:600;}
+.pcard p{font-size:.88rem; margin-bottom:10px;}
+.pills{display:flex; gap:7px; flex-wrap:wrap;}
+.pill{border:1px solid var(--accent); color:var(--accent); font-size:.75rem; padding:3px 10px; border-radius:6px;}
+
+/* skills */
+.chiprow{display:flex; flex-wrap:wrap; gap:8px;}
+.chip{border:1px solid var(--line); color:var(--ink-soft); font-size:.84rem; padding:5px 12px; border-radius:6px;}
+.skillgroup{margin-bottom:16px;}
+.skillgroup .label{font-weight:600; font-size:.84rem; color:var(--ink); margin-bottom:8px; font-family:'Fraunces',serif;}
+
+.plainlist{list-style:none;}
+.plainlist li{padding:11px 0; border-top:1px solid var(--line); font-size:.92rem; color:var(--ink-soft);}
+.plainlist li:first-child{border-top:none;}
+.plainlist strong{color:var(--ink);}
+
+footer{padding:38px 0 60px;}
+footer p{font-size:.85rem; color:var(--ink-soft);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navrow">
+    <span class="brand">Bushra Fatima</span>
+    <button id="navToggle" aria-label="Menu">☰</button>
+    <div class="navlinks" id="navLinks">
+      <a href="#news">News</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section class="hero" id="top">
+    <div class="herogrid">
+      <div class="avatarwrap">
+        <img id="avatarImg" src="photo.jpg" alt="Bushra Fatima">
+        <span class="avatar-fallback" id="avatarFallback">BF</span>
+      </div>
+      <div>
+        <h1>Bushra Fatima</h1>
+        <p>Hi, I'm Bushra! I'm an AI/ML engineer with roots in computer vision, bridging into multimodal and generative AI. I'm currently a Mitacs Globalink Research Intern at Concordia University, working on multimodal fake news detection — VLMs, concept bottleneck models, and fusion techniques that let a model reason about the verdict it reaches.</p>
+        <p>My research is backed by three internships spanning industry and government, and I'm building toward a research identity in trustworthy multimodal AI as I apply to fully-funded PhD programs.</p>
+        <div class="contactrow">
+          <a href="mailto:fatimabushra1001@gmail.com">Email</a><span>·</span>
+          <a href="https://www.linkedin.com/in/bushra-fatima07" target="_blank" rel="noopener">LinkedIn</a><span>·</span>
+          <a href="https://github.com/BushraFatima17" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="news">
+    <h2>Latest</h2>
+    <div class="tl">
+      <div class="tlitem"><div class="when">2026</div><p>Graduated with a BS in Computer and Information Sciences from PIEAS, CGPA 3.58/4.0.</p></div>
+      <div class="tlitem"><div class="when">2026</div><p>Selected for the Mitacs Globalink Research Internship at Concordia University — multimodal fake news detection.</p></div>
+      <div class="tlitem"><div class="when">2026</div><p>Selected for the McKinsey Forward Learner Program.</p></div>
+      <div class="tlitem"><div class="when">Jul – Sep 2025</div><p>AI Intern at Software Productivity Strategist Inc, building an IBM Watsonx Assistant for a fleet-inspection platform.</p></div>
+      <div class="tlitem"><div class="when">Jul – Aug 2025</div><p>Interned at the Senate of Pakistan, researching season-based crop disease patterns.</p></div>
+      <div class="tlitem"><div class="when">Jul – Aug 2024</div><p>ML Intern at TECHSOL SPACE, running exploratory data analysis on large datasets.</p></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="exitem">
+      <div class="rolerow"><span class="role">Mitacs Globalink Research Intern, Concordia University</span><span class="datepill">2026 – Present</span></div>
+      <ul>
+        <li>Researching LLM-based multimodal fake news detection, integrating VLMs, concept bottleneck models, and fusion techniques.</li>
+        <li>Working toward models that can reason about the verdict they reach, not just output a label.</li>
+      </ul>
+    </div>
+    <div class="exitem">
+      <div class="rolerow"><span class="role">AI Intern, Software Productivity Strategist Inc</span><span class="datepill">Jul – Sep 2025</span></div>
+      <div class="org">Islamabad, Pakistan</div>
+      <ul>
+        <li>Developed an IBM Watsonx Assistant for GreenKeyper DVIR, a fleet-inspection platform and mapped the project lifecycle in JIRA</li>
+      </ul>
+    </div>
+    <div class="exitem">
+      <div class="rolerow"><span class="role">Intern, Senate of Pakistan</span><span class="datepill">Jul – Aug 2025</span></div>
+      <div class="org">Islamabad, Pakistan</div>
+      <ul>
+        <li>Researched season-based disease patterns in plants for early crop-protection measures and joined secretariat level meetings.</li>
+      </ul>
+    </div>
+    <div class="exitem">
+      <div class="rolerow"><span class="role">ML Intern, TECHSOL SPACE</span><span class="datepill">Jul – Aug 2024</span></div>
+      <div class="org">Islamabad, Pakistan</div>
+      <ul><li>Ran exploratory data analysis with NumPy, Pandas, Matplotlib and Seaborn to surface trends and anomalies in large datasets.</li></ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Research Projects</h2>
+    <div class="pgrid">
+      <div class="pcard">
+        <div class="thumb" style="background:#F1E6D6;"></div>
+        <h3>LLM-based Multimodal Fake News Detection</h3>
+        <p>Ongoing research fusing VLMs and concept bottleneck models so an LLM can classify news and explain its reasoning.</p>
+        <div class="pills"><a class="pill" href="https://scholar.google.com/citations?user=sxLXnJQAAAAJ&hl=en" target="_blank" rel="noopener">Advisor</a></div>
+      </div>
+      <div class="pcard">
+        <div class="thumb" style="background:#E5EFE9;"></div>
+        <h3>Multimodal Forgery Detection in Identity Documents</h3>
+        <p>Fuses facial features with document metadata via VLMs and transformers to verify identity and flag forgery. Shipped as SecureID — a Flask + React app.</p>
+        <div class="pills">
+          <a class="pill" href="https://pern-my.sharepoint.com/:f:/g/personal/bscs2220_pieas_edu_pk/IgCpjYKUOJKWRLPknQhJ9Ug7AcmYOpKAcXnrcwd1PQXXi-I?e=mbO2QB" target="_blank" rel="noopener">Demo</a>
+          <a class="pill" href="https://www.researchgate.net/profile/Naeem-Akhter" target="_blank" rel="noopener">Advisor</a>
+        </div>
+      </div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <ul class="plainlist">
+      <li><strong>Patent application (in progress)</strong> — AI-based ID generation and verification</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="wrap"><p>© 2026 Bushra Fatima · <a href="#top">back to top</a></p></footer>
+
+</body>
+</html>
